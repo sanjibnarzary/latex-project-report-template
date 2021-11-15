@@ -1,0 +1,166 @@
+%
+% credit goes to stamford university project template
+%
+\documentclass[11pt]{report}
+\usepackage{mathptmx}
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=1cm,headsep=1cm,footskip=1cm}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage[numbers]{natbib}
+\usepackage{verbatim}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[numbers]{natbib}
+\usepackage{nomencl}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage[breakable,skins]{tcolorbox}
+\usepackage{float}
+\usepackage[titles]{tocloft}
+%%  Changing indentation  of chapter title in toc
+\makeatletter
+\renewcommand{\numberline}[1]{%
+  \setbox0\hbox{#1\quad}%
+  \hb@xt@\wd0{\@cftbsnum #1\@cftasnum\hfil}\@cftasnumb}
+\makeatother
+
+% the following is useful when we have the old nomencl.sty package
+\providecommand{\printnomenclature}{\printglossary}
+\providecommand{\makenomenclature}{\makeglossary}
+\makenomenclature
+\doublespacing
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{tauthesis}
+\usepackage[font={small,bf}, labelfont={small,bf}, margin=1cm]{caption}
+\usepackage{titlesec}
+\newcommand{\hsp}{\hspace{20pt}}
+
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp}{0pt}{\Huge\bfseries}
+\Degreetext{\emph{A Project Report Submitted in Partial Fulfillment of the Requirements for the Degree of}}
+\Title{\textbf{The Awesome Thesis/Project Title}}
+\Author{\textbf{Student Name} \\ Student ID \\ \& \\ \textbf{Student Name} \\ Student ID
+\\ \vspace{1cm}
+Supervised by: \\Supervisor Name \\Assistant Professor
+}
+\Year{May 2020}
+\Supervisor{Supervisor Name}
+\Department{Department of Computer Science \& Engineering}
+\Degree{Diploma in Computer Science \& Engineering}
+%\Degree{Bachelor of Technology \\in\\ Computer Science \& Engineering}
+% \Degree{Doctor of Philosophy}
+
+\makeatother
+
+\usepackage[english]{babel}
+\begin{document}
+
+\prelimpages
+
+\titlepage
+
+\include{Abstract}
+
+\approval{
+The Project Report ``Thesis / Project Report Name'' submitted by STUDENTNAME ID: STUDENTID, STUDENTNAME ID: STUDENTID, to the Department of Computer Science \& Engineering, Stamford University Bangladesh, has been accepted as satisfactory for the partial fulfillment of the requirements for the degree of Bachelor of Science (Hons) in Computer Science \& Engineering and approved as to its style and contents. \\
+
+\vspace*{20pt}
+\noindent Board of Examiner's Name, Signature, and Date:\\\\
+
+\noindent \minipage{0.32\textwidth}
+  ........................................... \\ \\
+\textbf{(Board Member 1) } \\ 
+Date: \\
+
+\endminipage\hfill
+\minipage{0.32\textwidth}
+........................................... \\ \\
+\textbf{(Board Member 2) } \\ 
+Date: \\
+\endminipage\hfill
+\minipage{0.32\textwidth}%
+........................................... \\ \\
+\textbf{(Board Member 3) } \\ 
+Date: \\
+\endminipage
+
+\vspace*{20pt}
+\noindent Supervisor's Signature and Date:\\\\
+........................................... \\
+\textbf{Supervisor Name} \\ \\
+Date: 
+
+
+}
+
+\declaration{
+We, hereby, declare that the work presented in this Thesis / Project is the outcome of the investigation performed by us under the supervision of Supervisor Name, Supervisor Designation, Department of Computer Science \& Engineering, Stamford University Bangladesh. We also declare that no part of this Project and thereof has been or is being submitted elsewhere for the award of any degree or Diploma. \\
+
+\vspace*{20pt}
+\noindent Signature and Date: \\\\
+........................................... \\
+\textbf{Student Name} \\
+Date: \\\\
+........................................... \\
+\textbf{Student Name} \\
+Date: \\
+
+}
+
+\dedication{
+Dedicated to ...
+}
+
+\acknowledgments{
+Acknowledgement text here...
+}
+
+
+%\tableofcontents{}
+\tableofcontents
+
+\textpages
+
+\listoffigures
+
+\listoftables
+
+\printnomenclature{}
+
+%\footnote{Split the thesis into separate chapters. Use \textbackslash{}include mode to include the separate files.}
+\include{chapters/1.Introduction}
+\include{chapters/2.Literature-Review}
+\include{chapters/3.System-Design}
+\include{chapters/4.Implementation}
+\include{chapters/5.Conclusion}
+%if not needed use % to comment
+%include{chapters/doesnotexit}
+
+
+%\bibliographystyle{plainnat}
+%\bibliographystyle{IEEEtran}
+\bibliographystyle{IEEEtranN}
+\bibliography{references}
+
+
+\appendix
+%\include{appendix}
+
+\newpage{}
+
+\end{document}

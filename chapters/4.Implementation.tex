@@ -1,0 +1,39 @@
+\chapter{Implementation}
+Chapter introductory text here ...
+
+\section{Implementation}
+...
+
+\subsection{Configuration Code}
+Sample configuration code  is  presented  in  
+\lstset{language=c, showstringspaces=false, tabsize=1, breaklines=true, breakatwhitespace=false, framexleftmargin=20pt,numbers=left, 
+numberstyle=\small,numbersep=10pt,frame=single,captionpos=t,xleftmargin=.061\textwidth}
+\begin{center}
+\begin{lstlisting}[caption=NodeMCU Configuration Code, label=nodemcuconfig]
+#define BLYNK_PRINT Serial   
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+
+char auth[] = "YourAuthToken";
+
+char ssid[] = "YourNetworkName";
+char pass[] = "YourPassword";
+void setup()
+{
+Serial.begin(115200);
+Blynk.begin(auth, ssid, pass);
+}
+void loop()
+{ Blynk.run(); }
+
+\end{lstlisting}
+\end{center}
+
+
+\section{Chapter Summary}
+In this chapter, ...
+
+
+
+
+
